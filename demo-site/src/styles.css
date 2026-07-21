@@ -1183,3 +1183,13 @@ h3 {
   color: var(--text-primary);
   font-style: italic;
 }
+
+.synthesis-label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--brand);
+  margin-bottom: 6px;
+}

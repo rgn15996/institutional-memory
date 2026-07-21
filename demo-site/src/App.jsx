@@ -564,15 +564,19 @@ function MemoryTalksBack() {
               <div className="spark" aria-hidden="true">
                 ✦
               </div>
-              <p>{s}</p>
+              <div>
+                <span className="synthesis-label">{s.label}</span>
+                <p>{s.text}</p>
+              </div>
             </article>
           </Reveal>
         ))}
       </div>
       <Reveal>
         <p className="synthesis-note">
-          This is synthesis, not recall — conclusions no single document contains. That's the
-          difference between a document store and institutional memory.
+          The memory holds conclusions, not just copied facts — and each session adds another layer
+          of reasoning on top of the last. That's the difference between a document store and
+          institutional memory.
         </p>
       </Reveal>
     </section>

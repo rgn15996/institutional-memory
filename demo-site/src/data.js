@@ -234,9 +234,18 @@ export const SESSION3_TABLE = [
 ];
 
 export const SESSION3_SYNTHESIS = [
-  "“No internal champion — must be rebuilt.” Neither document says this; the agent derived it.",
-  "“Priya's business case work is orphaned. Must be rebuilt and presented fresh to Marcus and Selina.”",
-  "An outstanding-actions list: rebuild the ROI model, clear the EuroCargo reference, prep the Meridian 3-year TCO comparison.",
+  {
+    label: "Derived on the spot (session 3)",
+    text: "“No internal champion — must be rebuilt.” This appears nowhere — not in the source documents, not even in the memory files. Session 3 combined two remembered facts (Priya was the champion; Priya is gone) into a gap no one had written down.",
+  },
+  {
+    label: "Derived earlier, remembered now (session 2 → 3)",
+    text: "“The business case is orphaned — must be rebuilt for Marcus and Selina.” No document says this either — session 2 inferred it from the resignation news and wrote it into memory. Session 3 recalled it intact.",
+  },
+  {
+    label: "A to-do list it left itself",
+    text: "Session 2 recorded open actions in memory (rebuild the ROI model, clear the EuroCargo reference, prep the Meridian TCO comparison). Session 3 returned them as a briefing-ready action plan.",
+  },
 ];
 
 export const CRITERIA = [
