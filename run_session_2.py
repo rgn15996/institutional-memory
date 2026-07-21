@@ -16,13 +16,16 @@ import os
 from pathlib import Path
 
 from anthropic import Anthropic
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 # Match session 1
 TEST_QUESTION = (
-    "I just joined the company and I need read-only prod access to debug an "
-    "issue tomorrow. What do I do? Be specific about the steps and the people "
-    "I need to talk to."
+    "Tomorrow's call is the final pitch to Gloucester Air. What's our "
+    "strategy? Be specific: who we're pitching to, the sequence, the "
+    "objections we must handle, and what to avoid."
 )
 
 DOCS_DIR = Path("synthetic-data/round2")
@@ -74,8 +77,9 @@ def main() -> None:
     )
 
     user_message = (
-        "I'm including some updated and new documents below. Some of them "
-        "contradict things you learned in our previous session.\n\n"
+        "I'm including new intel on the Gloucester Air / DXC OASIS pursuit "
+        "below. Some of it contradicts things you learned in our previous "
+        "session.\n\n"
         "Please:\n"
         "1. First, check your memory store at /mnt/memory/ to see what you "
         "already know.\n"
