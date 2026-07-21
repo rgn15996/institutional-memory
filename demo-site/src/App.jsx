@@ -313,19 +313,19 @@ function MemoryChart() {
   const M = { top: 16, right: 24, bottom: 44, left: 56 };
   const plotW = W - M.left - M.right;
   const plotH = H - M.top - M.bottom;
-  const max = 4000;
+  const max = 5000;
   const groups = MEMORY_FILES.length;
   const groupW = plotW / groups;
   const barW = Math.min(42, groupW / 3);
   const y = (v) => plotH - (v / max) * plotH;
-  const ticks = [0, 1000, 2000, 3000, 4000];
+  const ticks = [0, 1000, 2000, 3000, 4000, 5000];
 
   return (
     <section>
       <Reveal>
         <h2>The memory store grew — by updating, not appending</h2>
         <p className="section-sub">
-          Four files seeded in session 1. Session 2 rewrote every one of them in place, with
+          Three files seeded in session 1. Session 2 rewrote every one of them in place, with
           effective dates — exactly the hygiene an enterprise memory needs.
         </p>
       </Reveal>
@@ -530,17 +530,17 @@ function MemoryTalksBack() {
       </Reveal>
       <Reveal>
         <div className="s3-card">
-          <h3>“How strategy changed between sessions” — produced by the agent, from memory alone</h3>
+          <h3>“How strategy has changed over time” — produced by the agent, from memory alone. The column headings are its own.</h3>
           <div className="s3-table-wrap">
             <table className="s3-table">
               <thead>
                 <tr>
                   <th>Dimension</th>
                   <th>
-                    <span className="dot s1" /> Session 1
+                    <span className="dot s1" /> “Original strategy (now dead)”
                   </th>
                   <th>
-                    <span className="dot s2" /> Session 2
+                    <span className="dot s2" /> “Revised strategy”
                   </th>
                 </tr>
               </thead>

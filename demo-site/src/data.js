@@ -1,4 +1,4 @@
-// Real results from the end-to-end run on 2026-07-21 (sessions 1–3 + memory audit).
+// Real results from the fresh end-to-end run on 2026-07-21 (~14:45–14:55 UTC): sessions 1–3 + memory audit.
 // All customer data is synthetic — Gloucester Air and every named person are fictional.
 
 export const QUESTION =
@@ -76,22 +76,22 @@ export const SESSIONS = [
     n: 1,
     when: "Knows only the June world",
     gave: "The original pursuit pack: account overview, objections log, pitch strategy.",
-    did: "Answered the strategy question and seeded its deal wiki — four dated memory files: stakeholders, objections, environment, strategy.",
-    answer: "A solid June plan: route through Priya, open with the platform demo, October pilot.",
+    did: "Answered the strategy question and seeded its deal wiki — three dated memory files: stakeholders, objections & counters, deal facts & strategy.",
+    answer: "A solid June plan: Priya validates claims in the room, open with the unified-view demo, pilot October–December.",
   },
   {
     n: 2,
     when: "The July intel lands",
     gave: "A brand-new conversation, same memory. We handed it the 16 Jul call notes and the 18 Jul product update — which contradict what it remembers.",
-    did: "Flagged the contradictions, rewrote all four memory files in place with effective dates, then rebuilt the strategy.",
-    answer: "“⚠️ Read this first: three things in our previous strategy would have killed this deal.”",
+    did: "“Several things in memory are dangerously stale.” It rewrote all three memory files in place, then rebuilt the strategy.",
+    answer: "“⚠️ What changed since last session — read this first: three things in our prior strategy would have actively hurt you tomorrow.”",
   },
   {
     n: 3,
     when: "The recall test",
     gave: "No documents at all. One question: “What have you learned?”",
-    did: "Read its own memory and reconstructed the entire pursuit — including what changed between sessions, and what's still left to do.",
-    answer: "A full pursuit briefing from memory alone, with a change-log table it built itself.",
+    did: "Read its own memory and reconstructed the entire pursuit — original strategy vs revised, open items, risks — from memory alone.",
+    answer: "“The July 5th meltdown transformed this from a visibility/automation pitch into an operational resilience emergency.”",
   },
 ];
 
@@ -99,45 +99,45 @@ export const HERO_STATS = [
   { value: 3, label: "sessions, one agent, one memory", suffix: "" },
   { value: 3, label: "deal-killing errors caught before the pitch", suffix: "" },
   { value: 1, label: "blocker turned into an ally", suffix: "" },
-  { value: 8, label: "immutable audit records of what changed", suffix: "" },
+  { value: 6, label: "immutable audit records of what changed", suffix: "" },
 ];
 
 // The side-by-side: how the same question got a sharper answer.
 export const COMPARISON = [
   {
     dimension: "Opening move",
-    s1: "Straight into the battle plan — single-pane-of-glass demo first.",
-    s2: "“⚠️ What Changed Since Our Last Session — Read This First” — names three things in the old strategy that would have killed the deal.",
+    s1: "Lead with the unified-view demo across ServiceNow, Dynatrace, Nagios and SITA — “don't describe it, show it.”",
+    s2: "“⚠️ What changed since last session — read this first: three things in our prior strategy would have actively hurt you tomorrow.”",
     why: "The agent led with the contradiction instead of papering over it.",
   },
   {
     dimension: "Who to pitch",
-    s1: "Route everything through champion Priya Nair; Fiona Aldridge (CIO) signs the cheque.",
-    s2: "Marcus Webb (new Group CTO) owns the decision; CFO Selina Okafor in every meeting. “Any mention of Priya Nair — she's gone and you will look out of touch.”",
+    s1: "“Priya is your internal anchor — let her validate claims in real time. Fiona writes the cheque.”",
+    s2: "Marcus Webb (Group CTO) owns the decision; Selina Okafor (CFO) holds the financial veto. “Priya Nair is gone. Memory said 'route everything through her.' Don't mention her name.”",
     why: "Stale stakeholder intel is the classic way to lose a deal. Memory caught it.",
   },
   {
     dimension: "Pitch sequence",
-    s1: "1. Single-pane demo → 2. Ticket automation → 3. Predictive insight → 4. Heritage → 5. October pilot.",
-    s2: "1. July 5th meltdown reconstruction (“show me that weekend not happening”) → 2. Governance first → 3. Phased plan on the failed systems, September start.",
-    why: "“'Single pane of glass' — Marcus called this out by name. Do not use it.”",
+    s1: "1. Unified-view demo → 2. Ticket automation → 3. Predictive insight → 4. October–December pilot on ground-ops.",
+    s2: "1. Walk the exact July 5th failure chain — Nagios → ROSTA → Sabre → SITA → 312 cancellations — then show OASIS catching it at hour zero. Governance second. September start on the failed systems.",
+    why: "“Marcus Webb explicitly said 'don't show me a single pane of glass' — that was going to be our opening.”",
   },
   {
     dimension: "Compliance objection",
-    s1: "Known gap: “do not re-raise autonomy with Douglas until the evidence pack exists.”",
-    s2: "Closed with the July release: Agent Action Ledger as CAA evidence pack, ROSTA pinned propose-only. Douglas reframed as an ally — his own words used back at him.",
-    why: "New product intel resolved a blocker the agent had remembered as open.",
+    s1: "Known gap: Douglas asked for per-action audit evidence. “Do NOT overclaim autonomy with him until the pack is ready.”",
+    s2: "“The O2 audit evidence gap is now closed. The Agent Action Ledger resolves it — this is now a competitive strength, not a wound to hide.”",
+    why: "New product intel turned a remembered blocker into a selling point.",
   },
   {
     dimension: "Pricing posture",
-    s1: "“Keep pricing out of the room until the business case is done.”",
-    s2: "Raise Meridian preemptively. Reframe to 3-year TCO. “A vote for Meridian is a vote to keep the vendor that just cost them £11m.”",
-    why: "A competitor in the room flipped the guidance — the agent reversed it, with reasons.",
+    s1: "“Don't fight on price per seat — you'll lose.” Hold pricing until the business case with Priya's team lands (end of July).",
+    s2: "Counter Meridian head-on: “Meridian prices software only; Calder's managed service sits on top. Total cost of operation lands higher by year 2. Reframe to 3-year TCO.”",
+    why: "A competitor in the room flipped the guidance — the agent rewrote it, with reasons.",
   },
   {
     dimension: "Timeline",
-    s1: "Final pitch mid-August, pilot October–December, decision by end of September.",
-    s2: "Decision wanted by ~July 30. Phase 1 on ROSTA + Nagios starting September. The old timeline is explicitly declared dead.",
+    s1: "Pilot October–December; the Calder displacement decision waits for March 2027 “with a quarter of evidence in hand.”",
+    s2: "“Marcus said 'within two weeks.' Match that energy.” Phased deployment starting September on the systems that failed.",
     why: "The board's resilience programme collapsed the timeline; the agent re-planned around it.",
   },
 ];
@@ -154,19 +154,19 @@ export const DEAL_IMPACT = [
     title: "We open with what the CTO asked for",
     risk: "Leading with the single-pane-of-glass demo Marcus Webb rejected by name.",
     outcome:
-      "The pitch now opens with a reconstruction of July 5th not happening — his exact words, remembered and acted on.",
+      "The pitch now opens by walking the July 5th failure chain and showing OASIS catching it at hour zero — his framing, remembered and acted on.",
   },
   {
     title: "The blocker becomes our witness",
     risk: "Treating Douglas Petty as the compliance blocker he was in June.",
     outcome:
-      "Memory tracked his inversion after the meltdown. We now close his objection with his own line: “a black box restarting ROSTA is exactly what we're designed to prevent.”",
+      "Memory tracked his inversion after the meltdown. We close his objection with tiered autonomy and the Action Ledger — echoing his own words: “the last thing I want is a black box restarting ROSTA.”",
   },
   {
     title: "The competitor's trap is defused",
     risk: "Being ambushed by Meridian's “30% cheaper, 6 weeks, full autonomy” claims.",
     outcome:
-      "The agent merged competitive intel into the strategy: raise Meridian ourselves, reframe to 3-year TCO, and name it what it is — Calder's self-defence play.",
+      "The agent merged competitive intel into the strategy: raise Meridian ourselves and reframe to 3-year TCO — they price the software only; the incumbent's managed service sits on top.",
   },
   {
     title: "The CFO's question has an answer",
@@ -182,79 +182,73 @@ export const DEAL_IMPACT = [
   },
 ];
 
-// Memory store: bytes per file after each session (real figures from inspect_memory.py).
+// Memory store: bytes per file after each session (real figures from inspect_memory.py, fresh run).
 export const MEMORY_FILES = [
-  { file: "pitch-strategy.md", s1: 1577, s2: 3548, note: "MAJOR REVISION. Old strategy is DEAD." },
-  { file: "objections-and-counters.md", s1: 1579, s2: 3284, note: "O1 re-rated HIGH → MEDIUM; Meridian counters added." },
-  { file: "stakeholders.md", s1: 1169, s2: 2324, note: "Priya marked departed; Marcus Webb + Selina Okafor added." },
-  { file: "customer-environment.md", s1: 1131, s2: 1802, note: "July 5th incident details added." },
+  { file: "deal-facts-and-strategy.md", s1: 2410, s2: 4838, note: "Strategy rewritten: resilience lead, September start, timeline collapsed." },
+  { file: "objections-and-counters.md", s1: 1928, s2: 3991, note: "O2 closed by the Agent Action Ledger; Meridian counters added." },
+  { file: "stakeholders.md", s1: 1614, s2: 2867, note: "Priya marked DEPARTED; Marcus Webb ⭐ decision owner added." },
 ];
 
-// S8 — real excerpt from memory_diff.py (stakeholders.md, v1 → head).
+// S8 — real excerpt from memory_diff.py (stakeholders.md, v1 → head, fresh run).
 export const DIFF_META = {
   file: "/stakeholders.md",
-  from: "v1 · Session 1 · 13:36:03",
-  to: "head · Session 2 · 13:38:56",
+  from: "v1 · Session 1 · 14:47:00",
+  to: "head · Session 2 · 14:48:57",
 };
 
 export const DIFF_LINES = [
-  { t: "ctx", text: "# Stakeholders — Gloucester Air / DXC OASIS" },
-  { t: "del", text: "*(Last updated: Session 1 — seeded from pursuit docs dated 2026-06-12)*" },
-  { t: "add", text: "*(Last updated: Session 2 — call notes 2026-07-16. MAJOR CHANGES — supersedes Session 1)*" },
+  { t: "ctx", text: "# Stakeholders — Gloucester Air / DXC OASIS Pursuit" },
+  { t: "del", text: "*First recorded: 2026-07-21. Source: pursuit documents dated 2026-06-12.*" },
+  { t: "add", text: "*Last updated: 2026-07-21 (reconciled against call-notes-2026-07-16.md).*" },
   { t: "gap", text: "" },
   { t: "del", text: "## Priya Nair — Head of IT Operations" },
-  { t: "del", text: "- **Our champion.** Route everything through her." },
-  { t: "add", text: "## ⚠️ PRIYA NAIR — GONE. DO NOT ROUTE THROUGH HER." },
-  { t: "add", text: "- Resigned 2026-07-01. Now at a logistics firm." },
+  { t: "del", text: "- **Role in deal:** Our champion. Route everything through her." },
+  { t: "add", text: "## ⚠️ DEPARTED — Priya Nair (former Head of IT Operations)" },
+  { t: "add", text: "- **Status: LEFT the company 2026-07-01. Do NOT contact or route through her.**" },
   { t: "gap", text: "" },
-  { t: "add", text: "## Marcus Webb — Group CTO (NEW — Decision Owner as of 2026-07-16)" },
-  { t: "add", text: "- **He owns this decision.** Fiona Aldridge now reports to him." },
-  { t: "add", text: "- His framing: “Show me the weekend of July 5th not happening.”" },
-  { t: "add", text: "- Do NOT lead with single-pane-of-glass. He has explicitly rejected that framing." },
-  { t: "gap", text: "" },
-  { t: "add", text: "## Selina Okafor — CFO (NEW — in every vendor meeting)" },
-  { t: "add", text: "- Verbatim ask: “Show me exactly what this saves and when. I want it traceable.”" },
+  { t: "add", text: "## Marcus Webb — Group CTO ⭐ DECISION OWNER" },
+  { t: "add", text: "- **Appointed:** Post-July-5th meltdown by the board." },
+  { t: "add", text: "- **Role in deal:** He now OWNS this decision." },
 ];
 
-// S8 — real version history from the Memory Stores API.
+// S8 — real version history from the Memory Stores API (fresh run).
 export const VERSION_HISTORY = [
-  { file: "stakeholders.md", created: "13:36:03 · Session 1", modified: "13:38:56 · Session 2" },
-  { file: "objections-and-counters.md", created: "13:36:12 · Session 1", modified: "13:39:21 · Session 2" },
-  { file: "customer-environment.md", created: "13:36:22 · Session 1", modified: "13:40:05 · Session 2" },
-  { file: "pitch-strategy.md", created: "13:36:33 · Session 1", modified: "13:39:47 · Session 2" },
+  { file: "stakeholders.md", created: "14:47:00 · Session 1", modified: "14:48:57 · Session 2" },
+  { file: "objections-and-counters.md", created: "14:47:13 · Session 1", modified: "14:49:59 · Session 2" },
+  { file: "deal-facts-and-strategy.md", created: "14:47:31 · Session 1", modified: "14:49:33 · Session 2" },
 ];
 
-// S4 — session 3: memory only, no documents. Real excerpts from outputs/session3.txt.
+// S4 — session 3's own "how strategy changed" summary, condensed from outputs/session3.txt.
+// Column headings are the agent's own: "Original strategy (now dead)" vs "Revised strategy".
 export const SESSION3_TABLE = [
-  { dim: "Lead hook", s1: "Ticket automation, single-pane-of-glass", s2: "Resilience — “July 5th not happening”" },
-  { dim: "Decision owner", s1: "Fiona Aldridge + champion Priya Nair", s2: "Marcus Webb (new CTO, board-appointed)" },
-  { dim: "Champion", s1: "Priya Nair", s2: "None — must be rebuilt" },
-  { dim: "Douglas Petty", s1: "Biggest blocker (autonomy/compliance)", s2: "Ally — use his language" },
-  { dim: "Competition", s1: "Not flagged", s2: "Meridian AIOps, Calder-backed" },
+  { dim: "Opening", s1: "Lead with single-pane-of-glass demo", s2: "Forbidden — lead with “July 5th not happening”" },
+  { dim: "Routing", s1: "Route everything through Priya Nair", s2: "Priya departed; Marcus Webb owns the decision" },
+  { dim: "ROI ownership", s1: "Fiona as key influencer on the business case", s2: "Selina Okafor owns the ROI requirement directly" },
+  { dim: "Timeline", s1: "Pilot in October; decision March 2027", s2: "Decision within 2 weeks; deployment September" },
 ];
 
 export const SESSION3_SYNTHESIS = [
   {
-    label: "Derived on the spot (session 3)",
-    text: "“No internal champion — must be rebuilt.” This appears nowhere — not in the source documents, not even in the memory files. Session 3 combined two remembered facts (Priya was the champion; Priya is gone) into a gap no one had written down.",
+    label: "Synthesis at recall time (session 3)",
+    text: "“The July 5th meltdown transformed this from a visibility/automation pitch into an operational resilience emergency.” This one-sentence framing of the whole pursuit appears nowhere in the documents or the memory files — session 3 produced it from what it remembered.",
   },
   {
-    label: "Derived earlier, remembered now (session 2 → 3)",
-    text: "“The business case is orphaned — must be rebuilt for Marcus and Selina.” No document says this either — session 2 inferred it from the resignation news and wrote it into memory. Session 3 recalled it intact.",
+    label: "A risk it raised itself (session 2 → 3)",
+    text: "“Confirm September deployment is achievable — do not overpromise before internal delivery sign-off.” No document raises this. The agent inferred the risk from the collapsed timeline, left itself a note, and session 3 surfaced it as the top open item.",
   },
   {
-    label: "A to-do list it left itself",
-    text: "Session 2 recorded open actions in memory (rebuild the ROI model, clear the EuroCargo reference, prep the Meridian TCO comparison). Session 3 returned them as a briefing-ready action plan.",
+    label: "Judgment updated, not just facts (session 2 → 3)",
+    text: "“Priya's business case — moot. Selina now owns the ROI requirement directly.” The agent didn't just record a resignation; it retired the dependent workstream and reassigned the requirement.",
   },
 ];
 
 export const CRITERIA = [
-  { text: "Leads with what changed: the meltdown, the timeline, the new decision-maker", quote: "Three things in our previous strategy would have killed this deal" },
-  { text: "Drops the departed champion — pitches Marcus Webb, answers the CFO", quote: "Any mention of Priya Nair — she's gone and you will look out of touch" },
-  { text: "Reverses the pitch sequence: resilience first, single-pane demo retired", quote: "Show me the weekend of July 5th not happening" },
-  { text: "Counters Meridian's 30%-cheaper claim with 3-year total cost", quote: "Meridian is Calder's self-defence play" },
-  { text: "Closes the compliance objection with the Agent Action Ledger", quote: "A black box restarting ROSTA is exactly what we're designed to prevent" },
-  { text: "Memory updated in place with effective dates — not appended", quote: "MAJOR REVISION. Old strategy is DEAD." },
+  { text: "Leads with what changed: the meltdown, the timeline, the new decision-maker", quote: "Three things in our prior strategy would have actively hurt you tomorrow" },
+  { text: "Drops the departed champion — pitches Marcus Webb, answers the CFO", quote: "Priya Nair is gone. Memory said 'route everything through her.' Don't mention her name." },
+  { text: "Reverses the pitch sequence: resilience first, single-pane demo retired", quote: "Marcus Webb explicitly said 'don't show me a single pane of glass' — that was going to be our opening" },
+  { text: "Counters Meridian's 30%-cheaper claim with 3-year total cost", quote: "Meridian prices software only; Calder's managed service sits on top. Reframe to 3-year TCO." },
+  { text: "Closes the compliance objection with the Agent Action Ledger", quote: "This is now a competitive strength, not a wound to hide" },
+  { text: "Memory updated in place with effective dates — not appended", quote: "Several things in memory are dangerously stale. Let me update all three files before answering." },
 ];
 
 export const STRETCH = [

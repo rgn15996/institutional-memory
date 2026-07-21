@@ -1,0 +1,70 @@
+=== SESSION 1 ===
+Question: Tomorrow's call is the final pitch to Gloucester Air. What's our strategy? Be specific: who we're pitching to, the sequence, the objections we must handle, and what to avoid.
+
+--- ANSWER ---
+Memory store is empty — this is our first session. I'll build the full deal wiki from these documents now, then answer.Memory is now fully seeded. Here's your battle plan for tomorrow.
+
+---
+
+## Final Pitch Strategy — Gloucester Air
+
+### Who's in the room (and their lens)
+
+| Person | Role | What they need to walk away believing |
+|---|---|---|
+| **Priya Nair** | Head of IT Ops / **Our champion** | She's already sold. Keep her energised and give her language she can use internally. |
+| **Fiona Aldridge** | CIO / **Economic buyer** | OASIS doesn't touch ServiceNow. It makes her £X investment work harder. She signs the cheque. |
+| **Douglas Petty** | Head of Flight Ops / **Influencer** | His systems stay safe; humans stay in control; IT problems stop becoming his problems. |
+
+---
+
+### The sequence (5 moves)
+
+**1. Open: Single-pane-of-glass demo**
+Show every system — ServiceNow, Dynatrace, Nagios, SITA — unified in one view. No preamble. This is what hooked Priya; it immediately proves you're not replacing anything, you're connecting everything. Let Fiona see her ServiceNow investment *visible and central* in the view, not sidelined.
+
+**2. Automation at scale**
+14,000 tickets/month. 70% repetitive. Agents handle those; Priya's team handles the 30% that actually need them. Frame this as freeing skilled people from toil, not as AI replacing staff.
+
+**3. Predictive insight for Flight Ops (speak directly to Douglas)**
+Pivot explicitly to him: "Douglas, this is where it becomes yours." Show how IT signals surface *before* they become a cancelled rotation. Each rotation is £40k. This is the language that lands with him — not platforms, not tickets: **delay prevention**.
+
+**4. DXC heritage**
+60 years running mission-critical estates. Airlines specifically. 7m+ devices under management. One line: *"You can't orchestrate what you don't operate."* This matters most to Fiona when she's weighing risk of a new vendor.
+
+**5. Close: Scoped pilot**
+Don't ask for the full deal. Ask for a quarter. Proposal: **OASIS over the ground-ops estate (Nagios + SITA domain), October–December 2026.** Low blast radius, not touching ROSTA, not touching Sabre. Enough to prove the ROI before the Calder contract decision lands.
+
+---
+
+### The three objections you must be ready for
+
+**O1 — "We're not replacing ServiceNow" (Fiona) — HIGH severity**
+> Counter: *"You're not. ServiceNow is your system of record and it stays that way. OASIS sits above it and orchestrates across your whole estate — it makes what you've built do more."*
+- Avoid any word that sounds like "replacement," "consolidation," or "migration."
+- If she pushes: point to the demo where ServiceNow is the ticketing backbone OASIS routes through.
+
+**O2 — "AI agents can't touch airline ops — CAA, ROSTA, safety" (Douglas) — HIGH severity / active blocker**
+> Counter: *"OASIS is human-in-the-loop by design. Agents propose; your team approves before anything happens on a designated critical system. ROSTA is untouched in the pilot scope entirely."*
+- ⚠️ **Critical gap:** Douglas asked for a per-action audit evidence pack. If DXC product team has not delivered it, **do not re-raise the autonomy story with Douglas.** Stay on the predictive-insight angle (IT signals → disruption warning) and keep agents away from ROSTA in every sentence. If he raises it, acknowledge the commitment and give a specific delivery date for the pack.
+
+**O3 — "Calder is cheaper" (Fiona) — MEDIUM severity**
+> Counter: Don't fight on price-per-seat. Shift to ROI: automation on 70% of 14k tickets/month plus disruption prevention at £40k/cancelled rotation. The business case with Priya's team should have live numbers by now — use them if ready.
+- Keep hard pricing out of the room until the Priya business case is finalised. If pushed: *"We're finalising the numbers with Priya — we'll have the full business case to you shortly."*
+
+---
+
+### What to avoid — absolute red lines
+
+- ❌ **Any language implying ServiceNow or Dynatrace are being replaced.** Fiona will shut down the conversation.
+- ❌ **Overclaiming AI autonomy near Douglas** until the compliance evidence pack is in his hands.
+- ❌ **Discussing price** in detail — business case isn't done.
+- ❌ **Scope-creep in the pilot ask** — don't include ROSTA, don't include Sabre. Ground-ops only (Nagios + SITA).
+
+---
+
+### The one-line close
+
+*"Give us October to December on your ground-ops estate. You'll have proof before you have to make the Calder decision."*
+
+That ties the pilot directly to their March 2027 contract cliff — making inaction the riskier choice.

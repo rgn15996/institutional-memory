@@ -1,0 +1,86 @@
+=== SESSION 2 ===
+Question: Tomorrow's call is the final pitch to Gloucester Air. What's our strategy? Be specific: who we're pitching to, the sequence, the objections we must handle, and what to avoid.
+
+--- ANSWER ---
+I have everything I need. The new documents contradict several critical items in memory. Let me update all four files before answering.Memory is fully updated. Now here is your pitch strategy for tomorrow.
+
+---
+
+## ⚠️ What Changed Since Our Last Session — Read This First
+
+Three things in our previous strategy would have killed this deal:
+
+1. **Priya Nair is gone** (resigned July 1). We were routing everything through her. She is no longer at Gloucester Air.
+2. **The pitch sequence was wrong.** We planned to lead with single-pane-of-glass and ticket automation. Marcus Webb has *explicitly* rejected that framing.
+3. **The timeline has collapsed.** October pilot / August pitch is dead. Decision wanted by ~July 30th. Deployment starting September.
+
+Everything below reflects the new reality.
+
+---
+
+## Who You're Pitching To
+
+| Person | Role | What They Need | Tone |
+|---|---|---|---|
+| **Marcus Webb** | Group CTO — **decision owner** | Resilience narrative; phased plan starting with failed systems; DXC credibility on legacy/mixed estates | Peer-to-peer, technically sharp. He'll smell over-selling instantly. |
+| **Selina Okafor** | CFO — **now in every vendor meeting** | A quarter-by-quarter ROI model she can audit. Verbatim: "Show me exactly what this saves and when." | Concrete, traceable numbers. No vague "efficiency gains." |
+| **Douglas Petty** | Head of Flight Ops — **now an ally** | Governance, not autonomy. He's already pushed back on Meridian's full-autonomy pitch himself. | Validate his instinct. Use his language back at him. |
+| **Fiona Aldridge** | CIO — reduced influence, now reports to Marcus | Reassurance that ServiceNow isn't at risk | Brief and early; don't ignore her but she's not the decision. |
+
+---
+
+## Pitch Sequence
+
+**1. Open with July 5th — as a reconstruction, not a condolence.**
+
+Don't reference their pain. Walk them through how OASIS would have caught it nine hours earlier: the Nagios blind spot surfaces a storage anomaly on ROSTA; the agent flags it; a human approves the remediation action; ROSTA never desyncs from Sabre; ground handling has clean SITA data. Marcus asked for this literally: *"Show me the weekend of July 5th not happening."* Give him exactly that.
+
+**2. Lead on governance before anyone asks.**
+
+Introduce the **Agent Action Ledger** and **tiered autonomy policies** immediately after the July reconstruction — not as a feature demo, but as the answer to the incident's root problem (an ungoverned blind spot). Key points:
+- Every agent action is signed and immutable — exportable as a CAA evidence pack.
+- ROSTA gets pinned to **propose-only**, permanently. No agent restarts it without human sign-off.
+- The phrase to use with Douglas: *"A black box restarting ROSTA is exactly what we're designed to prevent."* (His words, reflected back.) He is already on your side here. Close that loop.
+
+**3. Present the phased deployment plan.**
+
+Phase 1 = **ROSTA + Nagios domain, September start.** This is what Marcus asked for. It's also the strongest proof-of-concept because it maps directly to the incident. Don't over-scope this slide — concrete systems, concrete start date, specific outcomes.
+
+**4. Hand the room to Selina with the ROI Ledger.**
+
+Walk through the **ROI Ledger dashboard** and anchor every number to real Gloucester Air data:
+- £11m incident cost. 312 cancelled flights. ~£40k per cancelled rotation.
+- OASIS maps incidents predicted vs. occurred, MTTR delta, and hours returned — by quarter, auditable.
+- Reference: **EuroCargo Group** (anonymised, referenceable) — mixed legacy/cloud estate, deployed starting with the two systems behind their 2025 outage, **40% MTTR reduction, zero repeat incidents in three quarters, quarterly ROI sign-off by their CFO**. This is a direct Gloucester Air parallel; use it explicitly.
+
+**5. Take down Meridian — raise it yourself if Marcus doesn't.**
+
+Don't wait for this to come up as a surprise objection. Get ahead of it:
+- **"30% cheaper"** → they price software only. Their model requires Calder's managed service on top. 3-year total cost typically runs higher. Offer to show the comparison.
+- **"6 weeks to deploy"** → observe-only mode on cloud-native estates only. Ask them to name one credible reference on a legacy/on-prem estate comparable to Gloucester's (60% on-prem, 15-year-old ROSTA). There isn't one.
+- **"Full autonomy, no humans needed"** → Douglas already answered this. In regulated aviation, that's a liability, not a feature. It is exactly the philosophy that causes meltdowns.
+- The killer framing: *Meridian is Calder's self-defence play.* A vote for Meridian is a vote to keep the vendor that just cost them £11m. Marcus knows how MSPs work — say it plainly.
+
+**6. Close on DXC heritage, briefly.**
+
+60 years mission-critical. Aviation specifically. 7m+ devices managed. The only partner with credible references on mixed legacy/on-prem estates at this scale. Don't linger — Marcus cares about this but it's a validator, not the reason he'll say yes.
+
+---
+
+## What to Absolutely Avoid
+
+- **"Single pane of glass"** — Marcus called this out by name. Do not use it.
+- **Any mention of Priya Nair** — she's gone and you will look out of touch.
+- **Leading with ticket automation** — that was the old pitch. Resilience is the hook.
+- **Vague ROI claims with Selina in the room** — she will shut you down. Every number needs a source.
+- **Overselling autonomy** — Douglas is your ally on governance precisely because of the meltdown. Don't give him a reason to flip.
+- **Fighting Meridian on price** — you will lose that fight. Always reframe to 3-year TCO.
+- **"We're replacing ServiceNow"** — Fiona still owns that estate. Keep the integration-agnostic framing.
+
+---
+
+## The One-Sentence Version
+
+> *OASIS is how you make sure July 5th never happens again — with governance that satisfies CAA, a deployment plan that starts where you failed, and ROI you can trace to the quarter.*
+
+Good luck tomorrow.

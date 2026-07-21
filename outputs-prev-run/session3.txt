@@ -1,0 +1,104 @@
+=== SESSION 3 (memory only — no documents) ===
+Question: No new documents today. Summarise everything you've learned about the Gloucester Air pursuit across our previous sessions: the customer, the people, the objections and how to counter them, the competitive landscape, and how our strategy has changed over time. Where something changed between sessions, say what changed and when.
+
+--- ANSWER ---
+Here is the full picture across all sessions recorded to date.
+
+---
+
+## Gloucester Air / DXC OASIS — Pursuit Summary
+
+---
+
+### The Customer
+
+**Gloucester Air** is a UK regional carrier: 62 aircraft, ~4,800 staff, hubs at Gloucestershire and Manchester, ~11m passengers/year and growing 9% YoY following the acquisition of two smaller route networks. That acquisition left the IT estate fragmented — the defining fact of the whole deal.
+
+Key systems:
+- **ServiceNow** — ITSM, 18 months in, heavily customised. The CIO's flagship project.
+- **Dynatrace** — observability for core apps.
+- **Nagios** — legacy ground-ops systems. *This is the blind spot that caused the July meltdown.*
+- **ROSTA** — 15-year-old crew scheduling system. Only 2 engineers understand it. Epicentre of the incident.
+- **Sabre** — reservations. Desynced from ROSTA during the incident.
+- **SITA** — ground handling messaging. Ground ops worked from stale SITA data during the incident.
+- ~60% on-prem across 2 DCs; AWS for customer-facing web/mobile.
+- 24/7 NOC outsourced to **Calder IT Services** — contract expires March 2027.
+- ~14,000 tickets/month; ~70% estimated repetitive/automatable.
+- Deal size: **£6–8m over 3 years**.
+
+---
+
+### The July 5th Meltdown — The Defining Event
+
+Everything changed around **4–6 July 2026**. A Nagios blind spot let a storage fault in ROSTA go undetected for 9 hours. Crew assignments desynced from Sabre; ground handling worked from stale SITA data. Result: **312 cancelled flights, ~£11m cost, front-page press coverage.** The board ordered an operational resilience programme with budget released *this quarter*. The old, relaxed timeline — October pilot, August pitch, March 2027 decision — **is dead**. Decision now wanted within two weeks of 2026-07-16; deployment starts **September 2026**, Phase 1 scoped to ROSTA + Nagios domain.
+
+---
+
+### The People — What Changed Between Sessions
+
+#### ⚠️ Priya Nair — GONE (changed Session 1 → Session 2)
+In Session 1, Priya Nair was our internal champion and was building the business case. She **resigned effective 2026-07-01** and is now at a logistics firm. Her business case work is orphaned. Do not reference her, route through her, or imply she is still involved.
+
+#### Marcus Webb — Group CTO (new as of 2026-07-16; did not exist in Session 1)
+Appointed by the board after the July incident. Ex-Head of Ops Technology at a major carrier — technically credible, will see through BS fast. **He now owns this decision.** His explicit asks: resilience and incident prevention as the lead (not ticket automation); phased deployment starting with the systems that failed; quarter-by-quarter ROI for Selina. His framing: *"Show me the weekend of July 5th not happening."* Critical note: he **explicitly rejected** "single-pane-of-glass" as a framing. Do not use it.
+
+#### Selina Okafor — CFO (new as of the post-meltdown meetings)
+Now attending all vendor meetings. Her verbatim ask: *"Show me exactly what this saves and when. I want it traceable."* The hook is the ROI Ledger dashboard — live, auditable, quarterly view. A quarter-by-quarter ROI model must be ready for the pitch.
+
+#### Fiona Aldridge — CIO (reduced influence; changed Session 1 → Session 2)
+In Session 1 she was the economic buyer. She now reports to Marcus Webb and her influence has shrunk. Her focus has narrowed to the ServiceNow estate. She remains sceptical of "another platform" / rip-and-replace, so the ServiceNow framing is still required — but she is no longer driving the decision.
+
+#### Douglas Petty — Head of Flight Ops (disposition inverted; changed Session 1 → Session 2)
+In Session 1 Douglas was our biggest blocker — he raised CAA compliance and ungoverned autonomy as a hard no. **After the meltdown, his position inverted.** He pushed back on Meridian's full-autonomy claim himself, using his own words: *"The last thing I want is a black box restarting ROSTA."* His compliance evidence pack concern was also resolved by the **Agent Action Ledger** (July release) — a signed, immutable audit record of every agent action, exportable for CAA review. He is now an *ally* on human-in-the-loop governance. Use his language, not ours.
+
+---
+
+### Objections and Counters
+
+| Objection | Owner | Severity | Counter |
+|-----------|-------|----------|---------|
+| "We're not replacing ServiceNow." | Fiona | **Medium** (her influence reduced) | OASIS sits *above* the estate. ServiceNow stays system of record; OASIS orchestrates across it. "Making the ServiceNow investment work harder." Landed well on the 2026-06-09 call. |
+| "Autonomous AI on airline ops is a safety/compliance non-starter." | Douglas | **LOW — RESOLVED/INVERTED** | Agent Action Ledger closes the compliance gap. Tiered autonomy: ROSTA can be pinned to propose-only permanently. Use Douglas's own language — he's with us now. |
+| "Calder is cheap. What does this actually save us?" | Selina / Fiona | **HIGH** | ROI Ledger, quarterly, auditable. Anchor to the £11m incident. One prevented meltdown dwarfs the platform cost. Each cancelled rotation ≈ £40k. Reference: EuroCargo Group — 40% MTTR reduction, zero repeat incidents, CFO sign-off in 3 quarters. Reframe to 3-year total cost of operation — never fight on per-seat price. |
+| "Meridian AIOps is 30% cheaper and deploys in 6 weeks." | Marcus (via competitive) | **HIGH — NEW in Session 2** | Their 30% cheaper claim is software-layer only; Meridian requires Calder's managed service on top and typically lands *more expensive* by year 2. Their 6-week claim is observe-only on cloud-native — Gloucester is 60% on-prem with 15-year-old legacy. Ask them for a single credible reference on a comparable estate. Their full-autonomy claim is a liability in regulated aviation — Douglas already rejected it. Underlying dynamic: **Meridian = Calder's self-defence play**. Marcus Webb will understand the conflict of interest if surfaced correctly. |
+
+---
+
+### Competitive Landscape
+
+**Meridian AIOps** is the active threat. It is being backed by Calder IT Services — the incumbent NOC provider whose contract expires March 2027. A vote for Meridian is effectively a vote to keep Calder. This conflict of interest is our most powerful counter. Meridian's claims (price, speed, full autonomy) each have specific weaknesses on this estate, and their governance story is exactly wrong after July 5th. The pitch should raise the Meridian comparison proactively, even if the customer doesn't.
+
+---
+
+### How Strategy Changed Between Sessions
+
+| Dimension | Session 1 | Session 2 (after 2026-07-16 call) |
+|-----------|-----------|-----------------------------------|
+| **Lead hook** | Ticket automation, single-pane-of-glass | Resilience/incident prevention — "July 5th not happening" |
+| **Decision owner** | Fiona Aldridge (economic buyer) + Priya Nair (champion) | Marcus Webb (new CTO, board-appointed) |
+| **Champion** | Priya Nair | No internal champion — must be rebuilt |
+| **Timeline** | August pitch → October pilot → March 2027 decision | Decision by ~2026-07-30; deployment September 2026 |
+| **Douglas Petty** | Biggest blocker (autonomy/compliance) | Ally — use his language |
+| **CFO** | Not in the room | In every meeting, wants traceable quarterly ROI |
+| **Competition** | Not flagged | Meridian AIOps actively competing, Calder-backed |
+| **Budget** | Linked to Calder renewal (March 2027) | Released NOW by board order |
+| **Business case** | Owned by Priya | Orphaned — must be rebuilt and presented fresh |
+
+---
+
+### Outstanding Actions
+
+- **Quarter-by-quarter ROI model for Selina** — was Priya's work, now orphaned. Must be rebuilt and presented fresh to Marcus and Selina.
+- **Confirm EuroCargo Group reference** is cleared for use with Gloucester Air.
+- **Prepare Meridian 3-year TCO comparison** — software layer vs. total with Calder managed service.
+
+---
+
+### What to Absolutely Avoid
+
+- "Single pane of glass" — Marcus explicitly called it out.
+- Routing anything through Priya Nair.
+- Leading with ticket automation.
+- Any language implying ServiceNow or Dynatrace are being replaced.
+- Claiming full autonomy — Douglas is now an ally precisely because we don't.
+- Fighting Meridian on price alone — always reframe to 3-year TCO.
