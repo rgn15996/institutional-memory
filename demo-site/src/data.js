@@ -5,6 +5,96 @@ export const QUESTION =
   "Tomorrow's call is the final pitch to Gloucester Air. What's our strategy? " +
   "Be specific: who we're pitching to, the sequence, the objections we must handle, and what to avoid.";
 
+// The setup — what the audience needs before anything else makes sense.
+export const SCENARIO_CARDS = [
+  {
+    kicker: "What we're selling",
+    title: "DXC OASIS",
+    body:
+      "DXC's agentic IT-operations platform. It sits above a customer's existing tools as a unifying layer, puts AI agents on routine ops work with humans in command, and makes ROI traceable.",
+  },
+  {
+    kicker: "Who we're selling to",
+    title: "Gloucester Air (fictional)",
+    body:
+      "A UK regional carrier: 62 aircraft, ~11m passengers/year, an IT estate fragmented by acquisitions, and a 24/7 NOC outsourced to an underperforming provider. The prize: a £6–8m, 3-year deal.",
+  },
+  {
+    kicker: "The problem we built for",
+    title: "Pursuit intel goes stale",
+    body:
+      "Stakeholders move, competitors appear, products ship. Deal knowledge lives in decks, inboxes and people's heads — so teams walk into pitches confidently wrong. That's how deals are lost.",
+  },
+];
+
+export const WHAT_WE_BUILT =
+  "So we built the pursuit team an AI teammate with institutional memory. It reads the deal documents, keeps its own deal wiki in a persistent memory store, reconciles contradictions when the intel changes — and answers one question on demand: “What's our strategy?” Every conversation with it is brand new. The only thing that carries over is what it chose to remember.";
+
+// The in-world story: what happened at Gloucester Air (all fictional, all in the docs we fed the agent).
+export const DEAL_EVENTS = [
+  {
+    date: "12 Jun",
+    title: "Pursuit strategy set",
+    body: "Champion: Priya Nair, Head of IT Ops. Plan: pitch in August, pilot in October. Keep pricing out of the room.",
+    turn: false,
+  },
+  {
+    date: "1 Jul",
+    title: "Our champion resigns",
+    body: "Priya Nair leaves Gloucester Air. The business case she owned is orphaned.",
+    turn: true,
+  },
+  {
+    date: "4–6 Jul",
+    title: "The meltdown",
+    body: "A monitoring blind spot lets a crew-system fault cascade: 312 cancelled flights, ~£11m, front-page news. The board orders a resilience programme — budget released now.",
+    turn: true,
+  },
+  {
+    date: "16 Jul",
+    title: "Everything changes on one call",
+    body: "Marcus Webb, a new board-appointed Group CTO, now owns the decision. The CFO joins every meeting. And a competitor — Meridian AIOps, backed by the incumbent — is in the room.",
+    turn: true,
+  },
+  {
+    date: "18 Jul",
+    title: "DXC ships an update",
+    body: "The OASIS July release lands: a signed audit ledger for agent actions, tiered autonomy, and a CFO-ready ROI dashboard — closing our biggest open objection.",
+    turn: false,
+  },
+  {
+    date: "22 Jul",
+    title: "The final pitch",
+    body: "Tomorrow. Decision expected within days. The question is whether our strategy reflects June's world — or July's.",
+    turn: false,
+  },
+];
+
+// The experiment: three conversations with the agent, mapped onto that story.
+export const SESSIONS = [
+  {
+    n: 1,
+    when: "Knows only the June world",
+    gave: "The original pursuit pack: account overview, objections log, pitch strategy.",
+    did: "Answered the strategy question and seeded its deal wiki — four dated memory files: stakeholders, objections, environment, strategy.",
+    answer: "A solid June plan: route through Priya, open with the platform demo, October pilot.",
+  },
+  {
+    n: 2,
+    when: "The July intel lands",
+    gave: "A brand-new conversation, same memory. We handed it the 16 Jul call notes and the 18 Jul product update — which contradict what it remembers.",
+    did: "Flagged the contradictions, rewrote all four memory files in place with effective dates, then rebuilt the strategy.",
+    answer: "“⚠️ Read this first: three things in our previous strategy would have killed this deal.”",
+  },
+  {
+    n: 3,
+    when: "The recall test",
+    gave: "No documents at all. One question: “What have you learned?”",
+    did: "Read its own memory and reconstructed the entire pursuit — including what changed between sessions, and what's still left to do.",
+    answer: "A full pursuit briefing from memory alone, with a change-log table it built itself.",
+  },
+];
+
 export const HERO_STATS = [
   { value: 3, label: "sessions, one agent, one memory", suffix: "" },
   { value: 3, label: "deal-killing errors caught before the pitch", suffix: "" },
@@ -147,45 +237,6 @@ export const SESSION3_SYNTHESIS = [
   "“No internal champion — must be rebuilt.” Neither document says this; the agent derived it.",
   "“Priya's business case work is orphaned. Must be rebuilt and presented fresh to Marcus and Selina.”",
   "An outstanding-actions list: rebuild the ROI model, clear the EuroCargo reference, prep the Meridian 3-year TCO comparison.",
-];
-
-export const TIMELINE = [
-  {
-    step: "01",
-    title: "Provision",
-    body: "One Managed Agent, one cloud environment, one persistent memory store mounted at /mnt/memory/. No infrastructure.",
-    session: null,
-  },
-  {
-    step: "02",
-    title: "Session 1 — baseline",
-    body: "Agent reads the pursuit docs, answers the pitch question, and seeds four memory files: stakeholders, objections, environment, strategy — each dated.",
-    session: 1,
-  },
-  {
-    step: "03",
-    title: "New intel lands",
-    body: "A fresh session gets round-2 docs: an £11m IT meltdown, a departed champion, a new CTO, a competitor in the room, and a DXC product release.",
-    session: 2,
-  },
-  {
-    step: "04",
-    title: "Reconcile, don't append",
-    body: "“The new documents contradict several critical items in memory.” The agent updates all four files in place, with effective dates, before answering.",
-    session: 2,
-  },
-  {
-    step: "05",
-    title: "A visibly sharper answer",
-    body: "Same question. The answer now leads with what changed, pitches the right people, reverses the sequence, and counters the competitor head-on.",
-    session: 2,
-  },
-  {
-    step: "06",
-    title: "The memory talks back",
-    body: "A third session with no documents at all. From memory alone, the agent reconstructs the whole pursuit — including what changed, when, and what's still to do.",
-    session: 3,
-  },
 ];
 
 export const CRITERIA = [

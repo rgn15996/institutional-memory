@@ -972,3 +972,214 @@ h3 {
     grid-template-columns: 1fr;
   }
 }
+
+/* ---------- scenario ---------- */
+
+.scenario-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.scenario-card {
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.scenario-kicker {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.scenario-card h3 {
+  font-size: 1.15rem;
+}
+
+.scenario-card p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.built-banner {
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--brand) 12%, var(--surface-1)),
+    var(--surface-1) 60%
+  );
+  border: 1px solid color-mix(in srgb, var(--brand) 35%, transparent);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+
+.built-label {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand);
+  margin-bottom: 10px;
+}
+
+.built-banner > p {
+  font-size: 1.02rem;
+  color: var(--text-primary);
+  max-width: 780px;
+}
+
+.flow-strip {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.flow-node {
+  flex: 1 1 160px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: center;
+}
+
+.flow-node span {
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.flow-node.agent {
+  border-color: color-mix(in srgb, var(--brand) 50%, transparent);
+}
+
+.flow-node.memory {
+  border-color: color-mix(in srgb, var(--series-2) 50%, transparent);
+}
+
+.flow-arrow {
+  align-self: center;
+  color: var(--text-muted);
+  font-size: 1.3rem;
+}
+
+/* ---------- deal story ---------- */
+
+.timeline-item.turn::before {
+  background: var(--series-2);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--series-2) 25%, transparent);
+}
+
+.event-date {
+  font-size: 1.05rem;
+  white-space: nowrap;
+  padding-top: 4px;
+}
+
+.turn-pill {
+  background: color-mix(in srgb, var(--series-2) 20%, transparent);
+  color: var(--series-2);
+}
+
+/* ---------- experiment sessions ---------- */
+
+.session-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 14px;
+}
+
+.session-card {
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  height: 100%;
+}
+
+.session-card.border-s1 {
+  border-top: 3px solid var(--series-1);
+}
+
+.session-card.border-s2 {
+  border-top: 3px solid var(--series-2);
+}
+
+.session-card.border-s3 {
+  border-top: 3px solid var(--brand);
+}
+
+.session-card header {
+  margin-bottom: 14px;
+}
+
+.session-num {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 3px 10px;
+  margin-bottom: 8px;
+}
+
+.session-num.s1 {
+  background: color-mix(in srgb, var(--series-1) 20%, transparent);
+  color: var(--series-1);
+}
+
+.session-num.s2 {
+  background: color-mix(in srgb, var(--series-2) 20%, transparent);
+  color: var(--series-2);
+}
+
+.session-num.s3 {
+  background: color-mix(in srgb, var(--brand) 20%, transparent);
+  color: var(--brand);
+}
+
+.session-card h3 {
+  font-size: 1.05rem;
+}
+
+.session-card dl {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.session-card dt {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 10px;
+}
+
+.session-card dd {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+.session-card dd.session-answer {
+  color: var(--text-primary);
+  font-style: italic;
+}

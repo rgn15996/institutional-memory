@@ -1,6 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import {
   QUESTION,
+  SCENARIO_CARDS,
+  WHAT_WE_BUILT,
+  DEAL_EVENTS,
+  SESSIONS,
   HERO_STATS,
   COMPARISON,
   DEAL_IMPACT,
@@ -10,7 +14,6 @@ import {
   VERSION_HISTORY,
   SESSION3_TABLE,
   SESSION3_SYNTHESIS,
-  TIMELINE,
   CRITERIA,
   STRETCH,
   STACK,
@@ -90,10 +93,11 @@ function Hero() {
         The agent that <em>remembers the deal</em>
       </h1>
       <p className="hero-sub">
-        Tomorrow we pitch <strong>DXC OASIS</strong> to Gloucester Air<span className="fn">*</span> — a
-        £6–8m pursuit. Between our prep sessions, the world moved: an £11m meltdown, a departed
-        champion, a competitor in the room. An institutional-memory agent caught every change,
-        rewrote its own intel, and rebuilt the strategy — so we walk in current, not confident-but-wrong.
+        We built an AI teammate for a sales pursuit: an agent with <strong>persistent memory</strong> that
+        keeps the deal intel current between conversations. We tested it on a fictional £6–8m pursuit —
+        pitching <strong>DXC OASIS</strong> to Gloucester Air<span className="fn">*</span> — and let the
+        world move underneath it: a meltdown, a departed champion, a competitor in the room. It caught
+        every change and rebuilt the strategy, so the team walks in current, not confident-but-wrong.
       </p>
       <div className="stat-row">
         {HERO_STATS.map((s, i) => (
@@ -109,27 +113,110 @@ function Hero() {
   );
 }
 
-function Timeline() {
+function Scenario() {
   return (
     <section>
       <Reveal>
-        <h2>How it works</h2>
+        <h2>The scenario</h2>
         <p className="section-sub">
-          Memory isn't a vector database bolted on. The agent decides what to remember, what to
-          update, and what to discard — and the store survives across sessions.
+          Three things to hold in mind — the product, the prospect, and the problem this agent
+          exists to solve.
+        </p>
+      </Reveal>
+      <div className="scenario-grid">
+        {SCENARIO_CARDS.map((c, i) => (
+          <Reveal key={c.title} delay={i * 100}>
+            <article className="scenario-card">
+              <span className="scenario-kicker">{c.kicker}</span>
+              <h3>{c.title}</h3>
+              <p>{c.body}</p>
+            </article>
+          </Reveal>
+        ))}
+      </div>
+      <Reveal>
+        <div className="built-banner">
+          <span className="built-label">What we built</span>
+          <p>{WHAT_WE_BUILT}</p>
+          <div className="flow-strip" aria-label="Architecture: deal documents flow into the agent, which reads and writes a persistent memory store">
+            <div className="flow-node">
+              Deal documents
+              <span>briefings · call notes · product updates</span>
+            </div>
+            <div className="flow-arrow">→</div>
+            <div className="flow-node agent">
+              The agent
+              <span>Claude · Managed Agents</span>
+            </div>
+            <div className="flow-arrow">⇄</div>
+            <div className="flow-node memory">
+              Memory store
+              <span>persists across every session</span>
+            </div>
+          </div>
+        </div>
+      </Reveal>
+    </section>
+  );
+}
+
+function DealStory() {
+  return (
+    <section>
+      <Reveal>
+        <h2>Six weeks that broke the strategy</h2>
+        <p className="section-sub">
+          The fictional events at Gloucester Air — everything the pursuit team knew arrived as
+          documents, in two batches, weeks apart. Highlighted events are the ones that invalidated
+          the original plan.
         </p>
       </Reveal>
       <div className="timeline">
-        {TIMELINE.map((t, i) => (
-          <Reveal key={t.step} delay={i * 100} className="timeline-item">
-            <div className="timeline-step">{t.step}</div>
+        {DEAL_EVENTS.map((e, i) => (
+          <Reveal key={e.date} delay={i * 90} className={`timeline-item ${e.turn ? "turn" : ""}`}>
+            <div className="timeline-step event-date">{e.date}</div>
             <div className="timeline-body">
               <h3>
-                {t.title}
-                {t.session && <span className={`pill s${Math.min(t.session, 3)}`}>Session {t.session}</span>}
+                {e.title}
+                {e.turn && <span className="pill turn-pill">changed everything</span>}
               </h3>
-              <p>{t.body}</p>
+              <p>{e.body}</p>
             </div>
+          </Reveal>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function Experiment() {
+  return (
+    <section>
+      <Reveal>
+        <h2>The experiment: three conversations with the agent</h2>
+        <p className="section-sub">
+          We asked the agent the same strategy question in three separate sessions. Each session is
+          a completely fresh conversation — the agent starts with a blank context every time. The
+          only continuity is the memory store it writes for itself.
+        </p>
+      </Reveal>
+      <div className="session-grid">
+        {SESSIONS.map((s, i) => (
+          <Reveal key={s.n} delay={i * 110}>
+            <article className={`session-card border-s${s.n}`}>
+              <header>
+                <span className={`session-num s${s.n}`}>Session {s.n}</span>
+                <h3>{s.when}</h3>
+              </header>
+              <dl>
+                <dt>What we gave it</dt>
+                <dd>{s.gave}</dd>
+                <dt>What it did</dt>
+                <dd>{s.did}</dd>
+                <dt>What came back</dt>
+                <dd className="session-answer">{s.answer}</dd>
+              </dl>
+            </article>
           </Reveal>
         ))}
       </div>
@@ -166,7 +253,7 @@ function Comparison() {
         <div className="compare-grid" key={active}>
           <article className="compare-card s1">
             <header>
-              <span className="dot s1" /> Session 1 · before memory
+              <span className="dot s1" /> Session 1 · knew only the June pack
             </header>
             <p>{row.s1}</p>
           </article>
@@ -175,7 +262,7 @@ function Comparison() {
           </div>
           <article className="compare-card s2">
             <header>
-              <span className="dot s2" /> Session 2 · after memory + new intel
+              <span className="dot s2" /> Session 2 · memory + the July intel
             </header>
             <p>{row.s2}</p>
           </article>
@@ -559,7 +646,9 @@ export default function App() {
   return (
     <main>
       <Hero />
-      <Timeline />
+      <Scenario />
+      <DealStory />
+      <Experiment />
       <Comparison />
       <DealImpact />
       <MemoryChart />
